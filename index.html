@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+      <title>WebGPU Book</title>
+      <style>
+         body {
+            background-color: #EEEEEE;
+         }
+         label {
+            white-space: pre;
+         }
+      </style>
+
+      <script src="./src/wgpu-matrix.js"></script>
+      <script src="./src/WebGPUDevice.js"></script>
+      <script src="./src/Camera.js"></script>
+      <script src="./src/Shader.js"></script>
+      <script src="./src/BookMesh.js"></script>
+      <script src="./src/Renderer.js"></script>
+      <script src="./src/UniformManager.js"></script>
+      <script src="./src/Book.js"></script>
+      <script src="./src/Compute.js"></script>
+      <script src="./src/Main.js"></script>
+   </head>
+
+<body>
+
+<div style="float:left; margin-right:30px">
+<p id="message">Drag mouse to rotate book.</p>
+
+<p>
+<label><b>Light Position:</b> <select id="light">
+    <option value="0">[0,0,0,1] (Viewpoint light)</option>
+    <option value="1">[0,0,1,0] (Directional, into screen)</option>
+    <option value="2">[0,1,0,0] (Directional, from above)</option>
+    <option value="3">[0,0,-10,1] (On z-axis, close to object)</option>
+    <option value="4">[2,3,5,0] (Directional from upper right)</option>
+</select></label></p>
+
+<p>
+<label><b>Diffuse Color:</b> <select id="diffuse">
+    <option value="0">White</option>
+    <option value="1">Red</option>
+    <option value="2">Green</option>
+    <option value="3">Blue</option>
+    <option value="4">Cyan</option>
+    <option value="5">Magenta</option>
+    <option value="6">Yellow</option>
+    <option value="7">Black</option>
+</select></label></p>
+
+<p>
+<label><b>Specular Color:</b> <select id="specular">
+    <option value="0">White</option>
+    <option value="1">Red</option>
+    <option value="2">Green</option>
+    <option value="3">Blue</option>
+    <option value="4">Cyan</option>
+    <option value="5">Magenta</option>
+    <option value="6">Yellow</option>
+    <option value="8">Gray</option>
+    <option value="7">Black</option>
+</select></label></p>
+
+
+<p><label><b>Specular Exponent:</b> <select id="exponent">
+    <option>0</option>
+    <option>1</option>
+    <option>2</option>
+    <option>5</option>
+    <option>10</option>
+    <option>20</option>
+    <option>50</option>
+    <option>100</option>
+</select></label></p>
+
+</div>
+
+<div id="canvas-holder">
+   <canvas width="1000" height="600" id="webgpuCanvas"></canvas>
+</div>
+
+</body>
+</html>
